@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>JavaScript RPG</title>
+  <style>
+    body { 
+      font-family: Arial, sans-serif; 
+      text-align: center; 
+      background: #1a1a1a; 
+      color: white; 
+      margin: 0; 
+      padding: 20px; 
+    }
+    #game { 
+      max-width: 600px; 
+      margin: 0 auto; 
+      border: 2px solid #444; 
+      padding: 20px; 
+      border-radius: 10px; 
+      background: #333; 
+    }
+    #player, #enemy { 
+      display: inline-block; 
+      width: 45%; 
+      margin: 10px; 
+      padding: 10px; 
+      border: 2px solid #555; 
+      border-radius: 5px; 
+      background: #222; 
+    }
+    #actions button { 
+      padding: 10px 20px; 
+      margin: 5px; 
+      font-size: 16px; 
+      cursor: pointer; 
+      background: #4CAF50; 
+      color: white; 
+      border: none; 
+      border-radius: 5px; 
+    }
+    #log { 
+      margin-top: 20px; 
+      padding: 10px; 
+      border: 1px solid #666; 
+      background: #111; 
+      min-height: 100px; 
+      text-align: left; 
+      border-radius: 5px; 
+    }
+    .health-bar { 
+      height: 20px; 
+      background: #555; 
+      margin: 5px 0; 
+      border-radius: 5px; 
+      overflow: hidden; 
+    }
+    .health-fill { 
+      height: 100%; 
+      background: #e74c3c; 
+      width: 100%; 
+    }
+  </style>
+</head>
+<body>
+  <div id="game">
+    <h1>Simple RPG Battle</h1>
+    
+    <!-- Player Stats -->
+    <div id="player">
+      <h2>Hero</h2>
+      <div class="health-bar">
+        <div id="playerHealth" class="health-fill"></div>
+      </div>
+      <p>HP: <span id="playerHP">100</span>/100</p>
+      <p>Attack: 10</p>
+    </div>
+
+    <!-- Enemy Stats -->
+    <div id="enemy">
+      <h2>Monster</h2>
+      <div class="health-bar">
+        <div id="enemyHealth" class="health-fill"></div>
+      </div>
+      <p>HP: <span id="enemyHP">50</span>/50</p>
+      <p>Attack: 5</p>
+    </div>
+
+    <!-- Action Buttons -->
+    <div id="actions">
+      <button onclick="attack()">Attack</button>
+      <button onclick="heal()">Heal (+15 HP)</button>
+      <button onclick="specialAttack()">Special (20 DMG)</button>
+    </div>
+
+    <!-- Battle Log -->
+    <div id="log">
+      <p>A wild monster appears!</p>
+    </div>
+  </div>
+
+  <script src="game.js"></script>
+</body>
+</html>
